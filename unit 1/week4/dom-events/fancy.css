@@ -1,0 +1,18 @@
+/* this is how you write a note in CSS*/
+/*if there is a class name called done, then the text will have a line through*/
+.done {
+    text-decoration: line-through;
+}
+
+/*we ant to indicate to the user that we can click on certain things on the web page.  how to add a pointer*/
+button {
+    cursor: pointer;
+}
+li {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#delete{
+    background-color: purple;
+}

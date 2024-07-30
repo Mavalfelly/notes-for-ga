@@ -1,0 +1,33 @@
+.children{
+    height: 75px;
+    width: 75px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+/*
+flexbox applies its rules to children elements
+*/
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/* does things according MAIN axis*/
+    align-items: center;/*does things according to the CROSS axis*/
+
+}
+/*
+flex-direction: row
+  main axis: left to right
+  cross axis: top to bottom
+flex-direction: column
+  main axis: top to bottom
+  cross axios: left to right
+*/
+
+.a{
+    align-items: flex-start;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <script src="./app.js" defer></script><!-- this is how to note in HTML-->
+</head>                      <!--defer means this script will run after body is loaded-->
+<link rel="stylesheet" href="./fancy.css"/>
+       <!-- the link tag connects css to html. the rel is equal stylesheet. the href is file-->
+<body>
+    <h1>To-Do List</h1>
+    <input placeholder="Add new ToDo"/>    <!-- input is another self closing tag like link. all in one line-->
+    <button>Add</button><!-- use <div></div> to stack. it is a blocking tag-->
+    <button id="delete">Delete</button>
+    <ul></ul>
+</body>
+</html>
+
+<!--in HTML there is a concept of blocking html tags vs non-blocking html tags
+blocking means they take up the entire width by default. Although we can override the default behavior with CSS, by default adding things after a blocking tag means they will stack on top of one another.
+non-blocking tags are tags that only take up the needed space. And adding multiple non-blocking tags means they are side by side-->
