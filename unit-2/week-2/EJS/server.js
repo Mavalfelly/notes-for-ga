@@ -15,7 +15,7 @@ So lets create a folder called views in our express app
 //**************************//
 //rendering ejs
 app.get('/',(req,res) => {
-    res.render('home.ejs')// express knows to look in the veiws folder
+    res.render('pages/home.ejs')// express knows to look in the veiws folder
 })
 
 app.get('/blueberry',(req,res) => {
@@ -67,13 +67,13 @@ app.get('/homethree',(req,res) => {
 //YOURSELF
 
 app.get('/part',(req,res) => {
-    res.render('part.ejs')
+    res.render('partials/part.ejs')
 })
 app.get('/pat',(req,res) => {
-    res.render('pat.ejs')
+    res.render('partials//pat.ejs')
 })
 app.get('/gat',(req,res) => {
-    res.render('gat.ejs')
+    res.render('partials//gat.ejs')
 })
 
 
