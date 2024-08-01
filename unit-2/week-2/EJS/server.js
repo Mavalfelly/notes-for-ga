@@ -17,6 +17,21 @@ So lets create a folder called views in our express app
 app.get('/',(req,res) => {
     res.render('home.ejs')// express knows to look in the veiws folder
 })
+
+app.get('/blueberry',(req,res) => {
+    res.render('blueberry.ejs',{color: 'blue'})//color us key/property. anything after colon is value
+
+})
+//you do
+app.get('/fruits',(req,res) => {
+    res.render('fruits.ejs',{fruits: ['raspberries', ' pineapple', ' grapes']})//Sending an array will not space automatically. need to add a space at begining of each new one
+})
+app.get('/fruit',(req,res) => {
+    res.render('fruit.ejs',{fruits: ['raspberries', ' pineapple', ' grapes']})
+})
+app.get('/instructors',(req,res) => {
+    res.render('instructors.ejs',{instructors: [' davids', ' dennis', ' kyle', ' alex',' joy']})
+})
 //res.send is strings
 //res.json sends json
 //res.render sends html
@@ -35,6 +50,63 @@ app.get('/homethree',(req,res) => {
             names: ['david','joy','matt' ]
         })
 })
+
+
+//SQUIDS
+//<%= when we need a particular value
+//<% runs js. each line of js needs one. even if in an object
+//both end in %>
+
+//----------------------------------------------------------------------//
+//PARTIALS
+
+//HOW WE PUT IN REPEATED HTML CODE SEE EJS FILES
+//DRY
+//DON'T
+//REPEAT
+//YOURSELF
+
+app.get('/part',(req,res) => {
+    res.render('part.ejs')
+})
+app.get('/pat',(req,res) => {
+    res.render('pat.ejs')
+})
+app.get('/gat',(req,res) => {
+    res.render('gat.ejs')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

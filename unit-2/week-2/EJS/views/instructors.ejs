@@ -1,5 +1,3 @@
-<!-- views/home.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +6,10 @@
   <title>Home</title>
 </head>
 <body>
-  <h1>David Rocks</h1>
-
-  <nav>
-    <a href="/gat">gat</a>
-    <a href="/pat">pat</a>
-    <a href="/part">part</a>
-
-  </nav>
+  <h1>my favorite instructors are!</h1>
+  <ul><% instructors.forEach(el => {%>
+    <li> <%= el %> </li>
+    <% }) %>
+  </ul>
 </body>
 </html>
