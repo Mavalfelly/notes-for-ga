@@ -24,7 +24,7 @@ app.get('/blueberry',(req,res) => {
 })
 //you do
 app.get('/fruits',(req,res) => {
-    res.render('fruits.ejs',{fruits: ['raspberries', ' pineapple', ' grapes']})//Sending an array will not space automatically. need to add a space at begining of each new one
+    res.render('fruits.ejs',{fruits: ['raspberries', ' pineapple', ' grapes']})//object ar the datapushed to the EJS file. Key is the variable. Value is value
 })
 app.get('/fruit',(req,res) => {
     res.render('fruit.ejs',{fruits: ['raspberries', ' pineapple', ' grapes']})
