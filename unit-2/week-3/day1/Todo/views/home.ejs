@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1>Hello Joy!</h1>
+
+
+  
+  <form action="/todo-ejs" method="post" class="form-example">
+    <div class="form-example">
+      <label for="item">Enter your item: </label>
+      <input type="text" name="item" id="item" required />
+    </div>
+    <div class="form-example">
+      <label for="isComplete">Is it complete?: </label>
+      <input type="string" name="isComplete" id="isComplete" required />
+    </div>
+    <div class="form-example">
+      <input type="submit" value="Submit!" />
+    </div>
+  </form>
+
+
+
+</body>
+</html>

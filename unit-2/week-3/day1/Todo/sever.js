@@ -11,10 +11,10 @@ const port = process.env.PORT;// linking to a .env filr always has to have proce
 const Todo = require('./models/todo.js')
 //MIDDLEWEAR
 app.use(express.json())
-
+app.use(express.urlencoded({extended:true}))// NEED FOR FORMS
 //CODE
 app.get('/', (req,res) => {
-    res.send(`<h1> Hello ${process.env.NAME}</h1>`)
+    res.render(`home.ejs`)
 });
 
 //returns the database
@@ -43,6 +43,47 @@ app.delete('/todo/:id', async (req,res) => {
 })
 //Update something in the database
 app.put('/todo/:id', async (req,res) => {
+    try{
+        res.json(await Todo.findByIdAndUpdate(req.params.id, req.body))
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+
+app.get('/todo-ejs', async (req,res) => {
+    try{
+        let listOfThings = await Todo.find({})
+        res.render('home.ejs',{k: listOfThings})
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+app.get('/test', async (req,res) => {
+    try{
+        let listOfThings = await Todo.find({})
+        res.render('list.ejs',{k: listOfThings})
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+//adds to the database
+app.post('/todo-ejs', async (req,res) => {
+    try{
+        res.json(await Todo.create(req.body))
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+//deletes from the database
+app.delete('/todo-ejs/:id', async (req,res) => {
+    try{
+        res.json(await Todo.findByIdAndDelete(req.params.id))
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+//Update something in the database
+app.put('/todo-ejs/:id', async (req,res) => {
     try{
         res.json(await Todo.findByIdAndUpdate(req.params.id, req.body))
     } catch (err){

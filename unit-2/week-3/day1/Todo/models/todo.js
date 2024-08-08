@@ -1,8 +1,8 @@
 // impotrt conection object
 const mongoose = require('./connection.js');
 const todoSchema = new mongoose.Schema({
-    text: String,
-    isComplete: Boolean,
+    item: String,
+    isComplete: String,
 });
 
 const Todo = mongoose.model('Todo', todoSchema);
