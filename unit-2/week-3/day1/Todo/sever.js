@@ -5,6 +5,7 @@ const express = require('express');
 
 require('dotenv').config();// link to the .env code
 const app = express();
+
 const port = process.env.PORT;// linking to a .env filr always has to have process.env
 //ENV WILL ALWAYS IMPORT AS A STRING
 // import schema
@@ -12,11 +13,13 @@ const Todo = require('./models/todo.js')
 //MIDDLEWEAR
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))// NEED FOR FORMS
+app.use(express.static('public'))
 //CODE
-app.get('/', (req,res) => {
-    res.render(`home.ejs`)
+app.get('/', async(req,res) => {
+    const listOfThings = await Todo.find({})
+    res.render(`home.ejs`,{k: listOfThings})
 });
-
+/*
 //returns the database
 app.get('/todo', async (req,res) => {
     try{
@@ -49,11 +52,19 @@ app.put('/todo/:id', async (req,res) => {
         res.status(400).json(err)
     }
 })
-
+*/
 app.get('/todo-ejs', async (req,res) => {
     try{
         let listOfThings = await Todo.find({})
         res.render('home.ejs',{k: listOfThings})
+    } catch (err){
+        res.status(400).json(err)
+    }
+})
+app.get('/todo/new', async (req,res) => {
+    try{
+        let listOfThings = await Todo.find({})
+        res.render('adding.ejs',{k: listOfThings})
     } catch (err){
         res.status(400).json(err)
     }
@@ -69,7 +80,8 @@ app.get('/test', async (req,res) => {
 //adds to the database
 app.post('/todo-ejs', async (req,res) => {
     try{
-        res.json(await Todo.create(req.body))
+        await Todo.create(req.body)
+        res.redirect('/')
     } catch (err){
         res.status(400).json(err)
     }
