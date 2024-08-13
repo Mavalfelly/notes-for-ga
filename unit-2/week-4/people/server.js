@@ -33,18 +33,12 @@ app.get('/person/new',async(req,res)=>{
 
 app.post('/people', async(req,res)=>{
     await People.create(req.body)
-    res.render('landing.js')
-})
+    res.redirect('person')
+});
 
 
 
-/*  <ul>
-        <% for(person of people) {%>
-            
-            <li><%=person.name%></li>
-            <%}%>
-    </ul>
-*/
+
 
 
 
