@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/people" method="POST">
+        <fieldset>
+            <legend> Create a new Person</legend>
+            
+            <label>
+                Name: <input type="text" name="name" placeholder="enter a Person" />
+                
+            </label>
+            <br>
+            <label>
+                Image URL: <input type="string" name="imageUrl" />
+                
+            </label>
+            <br>
+            <label>
+                Title: <input type="string" name="title"   />
+                
+            </label>
+        </fieldset>
+        <input type="submit" value="create new todo"/>
+    </form>
+</body>
+</html>
